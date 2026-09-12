@@ -12,7 +12,7 @@ const NavbarButton = ({ className }: { className?: string }) => {
     <>
       {!user ? (
         <Button
-          className={`text-white flex items-center justify-center ${className}`}
+          className={`text-white bg-black/20 flex items-center justify-center ${className}`}
         >
           <Link href="/login" className="mx-auto">
             Login

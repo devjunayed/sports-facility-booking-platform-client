@@ -11,6 +11,7 @@ import { Select, SelectItem } from "@heroui/select";
 import { Tooltip } from "@heroui/tooltip";
 import { Slider } from "@heroui/slider";
 import { Button } from "@heroui/button";
+import FacilityListCard from "./FacilityListCard";
 
 const Facilities = () => {
   const [queryUrl, setQueryUrl] = useState("");
@@ -62,7 +63,7 @@ const Facilities = () => {
   return (
     <section className="max-w-7xl mx-auto pt-4  px-4 pb-20">
       {/* --- Filters --- */}
-      <Card className="p-6 mb-10 shadow-sm border border-gray-300 sticky top-0 bg-white/90 backdrop-blur-md z-30">
+      <Card className="p-6 mb-10 shadow-sm border border-gray-300 sticky top-0 dark:bg-[#18181B] backdrop-blur-md z-30">
         <CardBody className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
          
         
@@ -160,32 +161,7 @@ const Facilities = () => {
             viewMode === "grid" ? (
               <FacilityCard key={facility._id} facility={facility} />
             ) : (
-              <Card
-                key={facility._id}
-                shadow="sm"
-                className="border border-gray-300 hover:shadow-md transition-all duration-200"
-              >
-                <CardBody className="flex flex-col sm:flex-row gap-5 items-center">
-                  <img
-                    src={
-                      facility.images?.[0] || "/assets/images/placeholder.jpg"
-                    }
-                    alt={facility.name}
-                    className="w-full sm:w-1/3 h-44 object-cover rounded-lg"
-                  />
-                  <div className="flex-1 text-left space-y-2">
-                    <h3 className="font-semibold text-lg text-[#1B1F3B]">
-                      {facility.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm line-clamp-2">
-                      {facility.description}
-                    </p>
-                    <p className="mt-2 font-medium text-[#1B1F3B]">
-                      Price: {facility?.pricePerHour} ৳
-                    </p>
-                  </div>
-                </CardBody>
-              </Card>
+              <FacilityListCard key={facility._id} facility={facility} />
             )
           )}
         </div>

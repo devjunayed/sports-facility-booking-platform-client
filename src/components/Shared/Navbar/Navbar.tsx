@@ -17,6 +17,7 @@ import {
   IoChevronDownOutline,
 } from "react-icons/io5";
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 interface NavbarProps {
   position?: "fixed" | "relative";
@@ -151,6 +152,7 @@ const Navbar = ({
 
           {/* RIGHT: Auth / Avatar */}
           <div className="flex items-center gap-3">
+            <ThemeSwitch />
             {user ? (
               <div ref={dropdownRef} className="relative">
                 {/* Avatar trigger */}

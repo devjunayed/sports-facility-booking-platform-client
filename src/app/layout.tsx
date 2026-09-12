@@ -4,8 +4,8 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { SportyFyProvider } from "../provider/SportyfyProvider";
-import { getServerSession } from "next-auth";
 import authOptions from "@/utils/authOptions";
+import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
   title: {
